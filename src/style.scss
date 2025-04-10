@@ -1,0 +1,51 @@
+@import '../src/scss/default/normalize';
+@import '../src/scss/default/reset';
+@import '../src/scss/default/container';
+
+@import '../src/scss/blocks/header/header';
+@import '../src/scss/blocks/hero/hero';
+@import '../src/scss/blocks/about/about';
+@import '../src/scss/blocks/business/business';
+@import '../src/scss/blocks/people/people';
+@import '../src/scss/blocks/footer/footer';
+
+.logo {
+  position: relative;
+  z-index: 1;
+}
+
+.mobile {
+  display: none;
+  position: relative;
+  z-index: 100;
+  @include media($mobile) {
+    display: grid;
+    gap: 0.5rem;
+    span {
+      width: 2rem;
+      height: 0.2rem;
+      background: #000;
+      transition: transform 1s;
+    }
+  }
+}
+
+.mobile.open {
+  transition: transform 0.5s;
+  span {
+    background: #fff;
+  }
+  span:nth-child(1) {
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+  }
+  span:nth-child(2) {
+    display: none;
+  }
+  span:nth-child(3) {
+    transform: rotate(45deg);
+    position: relative;
+    top: -14px;
+    transition: transform 0.5s;
+  }
+}

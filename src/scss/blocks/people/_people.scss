@@ -1,0 +1,39 @@
+@import '../../default/media';
+@import '../../default/mixins';
+.people {
+  &__wrapper {
+    @include grid(clamp(20rem, 30vw, 30rem), 1rem);
+    align-items: center;
+    max-width: 65rem;
+    @include media($tablet) {
+      align-items: start;
+    }
+    @include media($mobile) {
+      img {
+        margin-bottom: -5rem;
+      }
+    }
+  }
+  &__info {
+    span {
+      font-weight: 400;
+      font-size: 0.875;
+      line-height: 1.5;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      line-height: 1.3;
+      letter-spacing: 0em;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+}

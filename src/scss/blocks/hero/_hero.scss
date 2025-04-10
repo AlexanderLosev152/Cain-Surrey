@@ -1,0 +1,41 @@
+@import '../../default/media';
+.hero {
+  position: relative;
+  overflow: hidden;
+  &__title {
+    display: grid;
+    span {
+      font-weight: 400;
+      font-size: clamp(2rem, 6vw, 5.625rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      text-wrap: nowrap;
+    }
+    span:nth-child(2) {
+      margin-left: auto;
+    }
+    span:nth-child(3) {
+      margin-left: clamp(1rem, 8vw, 7.5rem);
+      @include media($mobile) {
+        margin-left: 0;
+      }
+    }
+  }
+  &__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: clamp(20rem, 45vw, 43.75rem);
+    margin-block: clamp(1.5rem, 6vw, 5rem);
+  }
+  &__descr {
+    font-weight: 400;
+    font-size: clamp(1rem, 3vw, 2rem);
+    line-height: 1.3;
+    letter-spacing: 0em;
+    max-width: 550px;
+    margin-bottom: clamp(1.5rem, 6vw, 5rem);
+  }
+}

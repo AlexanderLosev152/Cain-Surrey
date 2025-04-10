@@ -1,0 +1,48 @@
+@import '../../default/media';
+@import '../../default/mixins';
+
+.about {
+  box-shadow: inset 0 15px 20px 0 rgba(0, 0, 0, 0.1);
+  background: #edf1f2;
+  &__items {
+    @include grid(25rem, 2rem);
+    counter-reset: number;
+    @include media($mobile) {
+      @include grid(15rem, 2rem);
+    }
+  }
+  &__item {
+    counter-increment: number;
+    padding-left: 2.5em;
+    position: relative;
+    h2 {
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.3;
+      letter-spacing: 0em;
+      margin-bottom: clamp(1rem, 2vw, 1.875rem);
+    }
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    &::before {
+      content: '0' counter(number);
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    &:nth-child(n + 10) {
+      &::before {
+        content: counter(number);
+      }
+    }
+  }
+}
