@@ -1,52 +1,138 @@
 @import '../../default/media';
-
 .header {
-  margin-block: 1.75rem;
+  margin-top: 24px;
+  width: min(1200px, 100% - 2rem);
+  margin-inline: auto;
   &__wrapper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 }
 
 .nav {
-  @include media($mobile) {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-  }
+  transition: background 0.3s;
   ul {
     display: flex;
-    gap: 2rem;
-    a {
-      font-weight: 400;
-      line-height: 1.5;
-      padding: 1.5rem 0.75rem;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    @include media($tablet) {
+      display: none;
+    }
+    li {
+      a {
+        font-weight: 400;
+        font-size: 1rem;
+        color: inherit;
+        padding: 0.5rem 1rem;
+        text-wrap: nowrap;
+        border: 2px solid transparent;
+        border-radius: 3px;
+        transition: border 0.5s;
+      }
     }
   }
 }
 
-
-.nav {
-  transition: left 0.5s ease-in-out;
-}
-
 .nav.open {
-  top: 0;
-
   ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
-    background: #031f28;
-    color: #fff;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  a {
+    @include media($mobile) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.nav ul li {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+  a {
+    @include media($mobile) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.nav ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nav ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nav ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nav ul li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile {
+  display: none;
+  position: relative;
+  z-index: 100;
+  @include media($mobile) {
+    display: grid;
+    gap: 0.5rem;
+    span {
+      width: 2rem;
+      height: 0.2rem;
+      background: #000;
+      transition: transform 1s;
+    }
+  }
+}
+
+.mobile.open {
+  transition: transform 0.5s;
+  span {
+    background: #000;
+  }
+  span:nth-child(1) {
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+  }
+  span:nth-child(2) {
+    display: none;
+  }
+  span:nth-child(3) {
+    transform: rotate(45deg);
+    position: relative;
+    top: -0.75rem;
+    transition: transform 0.5s;
   }
 }

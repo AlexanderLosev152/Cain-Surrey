@@ -6,35 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./dist/images/Logo-icon.webp"
+      href="docs/images/Logo-icon.webp"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./src/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Cain-Surrey</title>
   </head>
   <body>
     <header class="header">
-      <div class="container">
-        <div class="header__wrapper">
-          <a class="logo" href="" >
-            <img src="./dist/images/Logo.webp" alt="logo" />
+      <div class="header__wrapper">
+        <div class="logo">
+          <a href="#">
+            <img src="docs/images/Logo.webp" alt="logo" />
           </a>
-          <nav class="nav">
-            <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#business">Business</a></li>
-              <li><a href="#people">People</a></li>
-              <li><a href="#inpact">Impact</a></li>
-              <li><a href="#contact">Contact us</a></li>
-            </ul>
-          </nav>
-
-          <div class="mobile">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
         </div>
+
+        <nav class="nav">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#business">Business</a></li>
+            <li><a href="#people">People</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </header>
@@ -43,12 +42,14 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero__title">
-            <span>The Path to</span><span>Financial Success</span
-            ><span>Begins with us</span>
+            <span data-aos="fade-right">The Path to</span
+            ><span data-aos="fade-left">Financial Success</span
+            ><span data-aos="fade-right">Begins with us</span>
           </h1>
           <div
             class="hero__img"
-            style="background-image: url(./dist/images/hero-bg.webp)"
+            data-aos="fade-left"
+            style="background-image: url(docs/images/hero-bg.webp)"
           ></div>
           <p class="hero__descr">
             We are committed to helping our clients achieve their financial
@@ -60,7 +61,7 @@
 
       <div class="about section" id="about">
         <ol class="about__items container">
-          <li class="about__item">
+          <li class="about__item" data-aos="flip-right">
             <h2>Access to Enterprise</h2>
             <p>
               As a member of Cain-Surrey Capital you will have access to our
@@ -70,7 +71,7 @@
               make informed decisions that can drive your business forward.
             </p>
           </li>
-          <li class="about__item">
+          <li class="about__item" data-aos="flip-right">
             <h2>Customized Solutions</h2>
             <p>
               As a member of Cain-Surrey Capital, you will have access to our
@@ -80,7 +81,7 @@
               make informed decisions that can drive your business forward.
             </p>
           </li>
-          <li class="about__item">
+          <li class="about__item" data-aos="flip-right">
             <h2>Global Reach</h2>
             <p>
               Cain-Surrey Capital has a global presence and we have a deep
@@ -90,7 +91,7 @@
               that can help you grow your business.
             </p>
           </li>
-          <li class="about__item">
+          <li class="about__item" data-aos="flip-right">
             <h2>Trust and Integrity</h2>
             <p>
               We believe that trust and integrity are the foundation of our
@@ -110,7 +111,8 @@
           <div class="business__items">
             <div
               class="business__item"
-              style="background-image: url(./dist/images/business-item-bg.webp)"
+              data-aos="flip-up"
+              style="background-image: url(docs/images/business-item-bg.webp)"
             >
               <h3>Innovative Approach</h3>
               <p>
@@ -122,7 +124,8 @@
 
             <div
               class="business__item"
-              style="background-image: url(./dist/images/business-item-bg.webp)"
+              data-aos="flip-up"
+              style="background-image: url(docs/images/business-item-bg.webp)"
             >
               <h3>Client-Centered Ethos</h3>
               <p>
@@ -134,7 +137,8 @@
 
             <div
               class="business__item"
-              style="background-image: url(./dist/images/business-item-bg.webp)"
+              data-aos="flip-up"
+              style="background-image: url(docs/images/business-item-bg.webp)"
             >
               <h3>Local Expertise</h3>
               <p>
@@ -149,7 +153,7 @@
 
       <section class="people" id="people">
         <div class="people__wrapper container section">
-          <div class="people__info">
+          <div class="people__info" data-aos="fade-right">
             <span>Your financial partner</span>
             <h3>Meet Christina</h3>
             <p>
@@ -162,7 +166,8 @@
           </div>
           <img
             class="people__img"
-            src="./dist/images/peolpe-bg.webp"
+            data-aos="zoom-in"
+            src="docs/images/peolpe-bg.webp"
             alt="Meet Christina"
             loading="lazy"
           />
@@ -174,7 +179,7 @@
       <div class="footer__wrapper container section">
         <div class="footer__text">
           <a href="" class="logo">
-            <img src="./dist/images/Logo.webp" alt="logo" />
+            <img src="docs/images/Logo.webp" alt="logo" />
           </a>
           <p>
             Our experienced team of professionals works closely with our clients
@@ -185,7 +190,7 @@
           </p>
         </div>
 
-        <div class="footer__items">
+        <div class="footer__items" data-aos="fade-up">
           <div class="footer__item">
             <h4>Company</h4>
             <a href="">About Cain-Surrey</a>
@@ -288,6 +293,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

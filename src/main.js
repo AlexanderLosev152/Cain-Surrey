@@ -22,3 +22,5 @@ links.forEach((el) => {
     document.body.style.overflow = '';
   });
 });
+
+AOS.init();
